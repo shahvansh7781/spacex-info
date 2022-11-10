@@ -1,8 +1,21 @@
 .container {
   padding: 0 2rem;
+  /* background-image: url('https://live.staticflickr.com/65535/52337888653_46b7f9b59f_z.jpg'); */
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)),url('https://live.staticflickr.com/65535/51763099634_171c177175.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
-
 .main {
+  /* min-height: 100vh; */
+  padding: 4rem 0;
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* .main {
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
@@ -106,7 +119,7 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
-}
+} */
 
 @media (max-width: 600px) {
   .grid {
