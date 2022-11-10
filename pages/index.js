@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "../Components/Navbar";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export default function Home({companyInfo}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,37 +19,47 @@ export default function Home() {
         <div className="flex justify-evenly w-1/2 mt-2">
           <div className="flex-col">
             <h1 className="text-xl">About</h1>
-            <p className="text-sm">Founded by Elon Musk in 2002</p>
-            <p className="text-sm">Has 9500 Employees,</p>
-            <p className="text-sm">4 vehicles,</p>
-            <p className="text-sm">3 launch sites,</p>
-            <p className="text-sm">3 test sites,</p>
+            <p className="text-sm">Founded by {companyInfo.founder} in {companyInfo.founded}</p>
+            <p className="text-sm">Has {companyInfo.employees} Employees,</p>
+            <p className="text-sm">{companyInfo.vehicles} vehicles,</p>
+            <p className="text-sm">{companyInfo.launch_sites} launch sites,</p>
+            <p className="text-sm">{companyInfo.test_sites} test sites,</p>
           </div>
           <div>
             <h1 className="text-xl">Headquarters</h1>
-            <p className="text-sm">Rocket Road,</p>
-            <p className="text-sm">Hawthrone,California</p>
+            <p className="text-sm">{companyInfo.headquarters.address},</p>
+            <p className="text-sm">{companyInfo.headquarters.city},{companyInfo.headquarters.state}</p>
           </div>
           <div>
             <h1 className="text-xl">Social Media</h1>
             <p className="text-sm">
-              <Link href="https://www.spacex.com/">Website</Link>
+              <Link href={companyInfo.links.website} className="hover:border-b-2">Website</Link>
             </p>
             <p className="text-sm">
-              <Link href="/">Flickr</Link>
+              <Link href={companyInfo.links.flickr} className="hover:border-b-2">Flickr</Link>
             </p>
             <p className="text-sm">
-              <Link href="/">Twitter</Link>
+              <Link href={companyInfo.links.twitter} className="hover:border-b-2">Twitter</Link>
             </p>
             <p className="text-sm">
-              <Link href="/">Elon Musk Twitter</Link>
+              <Link href={companyInfo.links.elon_twitter} className="hover:border-b-2">Elon Musk Twitter</Link>
             </p>
           </div>
         </div>
-        <h1 className="text-xl">Mission</h1>
+        <h1 className="text-xl mt-5">Mission</h1>
         <p className="text-center text-base">“You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. <br /> It’s about believing in the future and thinking that the future will be better than the past. <br /> And I can’t think of anything more exciting than going out there and being among the stars.” <br />
 -Elon Musk</p>
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const response = await fetch('https://api.spacexdata.com/v4/company');
+  const data = await response.json();
+  return {
+    props:{
+     companyInfo:data
+    }
+  }
 }
