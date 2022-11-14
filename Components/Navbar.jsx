@@ -13,7 +13,7 @@ const Navbar = () => {
   <div>
 
     <ul className="flex space-x-3 text-base">
-        <li><Link href="/">Capsules</Link></li>
+        <li><Link href="/capsules">Capsules</Link></li>
         <li><Link href="/">Cores</Link></li>
         <li><Link href="/">Crew</Link></li>
         <li><Link href="/">Dragons</Link></li>
