@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 
 const Capsule = ({capsuleData}) => {
   return (
-    <>
+    <div>
       <div className="pl-8 pr-8">
         <Navbar />
       </div>
@@ -15,7 +15,7 @@ const Capsule = ({capsuleData}) => {
           })
         }
       </div>
-    </>
+    </div>
   );
 };
 

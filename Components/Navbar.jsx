@@ -14,8 +14,7 @@ const Navbar = () => {
 
     <ul className="flex space-x-3 text-base">
         <li><Link href="/capsules">Capsules</Link></li>
-        <li><Link href="/">Cores</Link></li>
-        <li><Link href="/">Crew</Link></li>
+        <li><Link href="/crew">Crew</Link></li>
         <li><Link href="/">Dragons</Link></li>
         <li><Link href="/">Landpads</Link></li>
         <li><Link href="/">Launches</Link></li>
