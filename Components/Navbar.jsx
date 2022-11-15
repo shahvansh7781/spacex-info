@@ -7,7 +7,7 @@ const Navbar = () => {
  <>
  <div className="flex justify-between items-center">
    <div>
-    <Image src={logo} alt='logo'   width={200} height={110}></Image>
+    <Image src={logo} alt='logo' width={200} height={110}></Image>
    </div>
     
   <div>
@@ -15,7 +15,7 @@ const Navbar = () => {
     <ul className="flex space-x-3 text-base">
         <li><Link href="/capsules">Capsules</Link></li>
         <li><Link href="/crew">Crew</Link></li>
-        <li><Link href="/">Dragons</Link></li>
+        <li><Link href="/dragons">Dragons</Link></li>
         <li><Link href="/">Landpads</Link></li>
         <li><Link href="/">Launches</Link></li>
         <li><Link href="/">Launchpads</Link></li>
@@ -32,4 +32,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

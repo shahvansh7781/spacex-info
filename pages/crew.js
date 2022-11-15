@@ -12,9 +12,7 @@ const Crew = ({crewData}) => {
 <div className="flex gap-16 flex-wrap pr-8 pl-8 justify-center gap-y-36 mt-10">
 {
     crewData.map((crew)=>{
-         return <Link href={crew.wikipedia} key={crew.id}>
-            <CrewCard crew={crew}/>
-         </Link>
+         return <CrewCard crew={crew} key={crew.id}/>
     })
 }
 </div>

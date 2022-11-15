@@ -3,7 +3,7 @@ import React from "react";
 const CapsuleCard = ({capsule}) => {
   return (
     <>
-      <div className="h-96 w-96 bg-jet-black h-">
+      <div className="h-96 w-96 bg-jet-black">
         <div className="p-4 text-[30px] font-medium">
           <p>{capsule.type},{capsule.serial}</p>
         </div>
