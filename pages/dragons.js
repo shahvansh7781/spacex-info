@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import Navbar from "../Components/Navbar";
 
@@ -8,7 +9,8 @@ const Dragon = ({dragonData}) => {
       <div className="pr-8 pl-8">
         <Navbar />
       </div>
-      <div className="flex justify-center gap-4 mt-8">
+      <div className="flex justify-center gap-6 mt-8">
+        <Link href={`/dragonDetails/${dragonData[0].id}`}>
         <div className="bg-jet-black h-[39vmax] w-[35vmax] flex-col space-y-[1vmax]">
           <Image
             src={dragonData[0].flickr_images[3]}
@@ -21,11 +23,13 @@ const Dragon = ({dragonData}) => {
             <p className="text-sm">
               {dragonData[0].description}
             </p>
-            <button className="border-2 p-[0.8vmax] text-sm mt-[2vmax]">
+            <button className="border-2 p-[0.8vmax] text-sm mt-[3.5vmax]">
               More Details
             </button>
           </div>
         </div>
+        </Link>
+        <Link href={`dragonDetails/${dragonData[1].id}`}>
         <div className="bg-jet-black h-[39vmax] w-[35vmax] flex-col space-y-[0.7vmax]">
         <Image
             src={dragonData[1].flickr_images[0]}
@@ -43,6 +47,7 @@ const Dragon = ({dragonData}) => {
             </button>
           </div>
         </div>
+        </Link>
       </div>
     </>
   );
