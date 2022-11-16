@@ -16,7 +16,7 @@ const Navbar = () => {
         <li><Link href="/capsules">Capsules</Link></li>
         <li><Link href="/crew">Crew</Link></li>
         <li><Link href="/dragons">Dragons</Link></li>
-        <li><Link href="/">Landpads</Link></li>
+        <li><Link href="/landpads">Landpads</Link></li>
         <li><Link href="/">Launches</Link></li>
         <li><Link href="/">Launchpads</Link></li>
         <li><Link href="/">Payloads</Link></li>
