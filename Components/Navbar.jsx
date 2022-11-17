@@ -6,9 +6,9 @@ const Navbar = () => {
   return (
  <>
  <div className="flex justify-between items-center">
-   <div>
+   <Link href="/">
     <Image src={logo} alt='logo' width={200} height={110}></Image>
-   </div>
+   </Link>
     
   <div>
 
@@ -19,8 +19,8 @@ const Navbar = () => {
         <li><Link href="/landpads">Landpads</Link></li>
         <li><Link href="/launches">Launches</Link></li>
         <li><Link href="/launchpads">Launchpads</Link></li>
-        <li><Link href="/">Payloads</Link></li>
-        <li><Link href="/">Roadster</Link></li>
+        <li><Link href="/payloads">Payloads</Link></li>
+        <li><Link href="/roadster">Roadster</Link></li>
         <li><Link href="/">Rockets</Link></li>
         <li><Link href="/">Ships</Link></li>
         <li><Link href="/">Starlink</Link></li>
