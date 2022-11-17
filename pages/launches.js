@@ -12,26 +12,31 @@ const Launches = ({ launchData }) => {
       <div className="flex justify-center gap-12 flex-wrap gap-y-72 mt-10">
         {launchData.map((launch) => {
           let date = new Date(launch.date_utc);
-            let month = date.getUTCMonth()+1;
-            let day = date.getUTCDate();
-            let year = date.getUTCFullYear();
-            
+          let month = date.getUTCMonth() + 1;
+          let day = date.getUTCDate();
+          let year = date.getUTCFullYear();
+
           return (
             <>
-            <Link href={launch.links.article ? (launch.links.article):("/launches")}>
-            <div className="w-[370px] h-[350px] text-center space-y-2 text-[20px]">
-            <Image
-              key={launch.id}
-              src={launch.links.patch.small ? (launch.links.patch.small) : (launch.links.flickr.original[0])}
-              alt="no image"
-              height={320}
-              width={370}
-            />
-  <p>{launch.name}</p>
-  <p>{`Date: ${day}-${month}-${year}`}</p>
-            </div>
-            </Link>
-            
+              <Link
+                href={launch.links.article ? launch.links.article : "/launches"}
+              >
+                <div className="w-[370px] h-[350px] text-center space-y-2 text-[20px]">
+                  <Image
+                    key={launch.id}
+                    src={
+                      launch.links.patch.small
+                        ? launch.links.patch.small
+                        : launch.links.flickr.original[0]
+                    }
+                    alt="no image"
+                    height={320}
+                    width={370}
+                  />
+                  <p>{launch.name}</p>
+                  <p>{`Date: ${day}-${month}-${year}`}</p>
+                </div>
+              </Link>
             </>
           );
         })}

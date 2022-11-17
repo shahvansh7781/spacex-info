@@ -1,33 +1,31 @@
-import Link from 'next/link'
-import React from 'react'
-import CrewCard from '../Components/CrewCard'
-import Navbar from '../Components/Navbar'
+import Link from "next/link";
+import React from "react";
+import CrewCard from "../Components/CrewCard";
+import Navbar from "../Components/Navbar";
 
-const Crew = ({crewData}) => {
+const Crew = ({ crewData }) => {
   return (
-<>
-<div className='pr-8 pl-8'>
-    <Navbar/>
-</div>
-<div className="flex gap-16 flex-wrap pr-8 pl-8 justify-center gap-y-36 mt-10">
-{
-    crewData.map((crew)=>{
-         return <CrewCard crew={crew} key={crew.id}/>
-    })
-}
-</div>
-</>
-  )
-}
+    <>
+      <div className="pr-8 pl-8">
+        <Navbar />
+      </div>
+      <div className="flex gap-16 flex-wrap pr-8 pl-8 justify-center gap-y-36 mt-10">
+        {crewData.map((crew) => {
+          return <CrewCard crew={crew} key={crew.id} />;
+        })}
+      </div>
+    </>
+  );
+};
 
 export default Crew;
 
 export async function getStaticProps(params) {
-    const response = await fetch("https://api.spacexdata.com/v4/crew");
-    const data = await response.json();
-    return {
-        props:{
-            crewData:data
-        }
-    }
+  const response = await fetch("https://api.spacexdata.com/v4/crew");
+  const data = await response.json();
+  return {
+    props: {
+      crewData: data,
+    },
+  };
 }

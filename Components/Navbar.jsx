@@ -21,7 +21,7 @@ const Navbar = () => {
         <li><Link href="/launchpads">Launchpads</Link></li>
         <li><Link href="/payloads">Payloads</Link></li>
         <li><Link href="/roadster">Roadster</Link></li>
-        <li><Link href="/">Rockets</Link></li>
+        <li><Link href="/rockets">Rockets</Link></li>
         <li><Link href="/">Ships</Link></li>
         <li><Link href="/">Starlink</Link></li>
     </ul>

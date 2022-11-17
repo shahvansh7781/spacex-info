@@ -12,7 +12,10 @@ const Launchpads = ({ launchpadData }) => {
         {launchpadData.map((launchpad) => {
           return (
             <>
-              <div className="h-[500px] w-[500px] space-y-3 text-center" key={launchpad.id}>
+              <div
+                className="h-[500px] w-[500px] space-y-3 text-center"
+                key={launchpad.id}
+              >
                 <Image
                   src={launchpad.images.large[0]}
                   alt=""
@@ -22,7 +25,7 @@ const Launchpads = ({ launchpadData }) => {
                 />
                 <p className="text-[22px]">{launchpad.name}</p>
                 <p>Status: {launchpad.status}</p>
-               { /* <p>{launchpad.details}</p> */}
+                {/* <p>{launchpad.details}</p> */}
               </div>
             </>
           );
