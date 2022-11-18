@@ -1,16 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import useSWR from "swr";
 import Navbar from "../Components/Navbar";
 
-const Launches = ({ launchData }) => {
+const fetcher = async () => {
+  const response = await fetch("https://api.spacexdata.com/v4/launches");
+  const data = await response.json();
+  return data;
+};
+
+const Launches = () => {
+  const {data} = useSWR("launch", fetcher);
   return (
     <>
       <div className="pr-8 pl-8">
         <Navbar />
       </div>
-      <div className="flex justify-center gap-12 flex-wrap gap-y-72 mt-10">
-        {launchData.map((launch) => {
+      {
+        !data ? (<h1>Loading...</h1>) : (<div className="flex justify-center gap-12 flex-wrap gap-y-72 mt-10">
+        {data.map((launch) => {
           let date = new Date(launch.date_utc);
           let month = date.getUTCMonth() + 1;
           let day = date.getUTCDate();
@@ -20,15 +29,16 @@ const Launches = ({ launchData }) => {
             <>
               <Link
                 href={launch.links.article ? launch.links.article : "/launches"}
+                
               >
                 <div className="w-[370px] h-[350px] text-center space-y-2 text-[20px]">
                   <Image
-                    key={launch.id}
                     src={
                       launch.links.patch.small
                         ? launch.links.patch.small
                         : launch.links.flickr.original[0]
                     }
+                    key={launch.id}
                     alt="no image"
                     height={320}
                     width={370}
@@ -40,20 +50,11 @@ const Launches = ({ launchData }) => {
             </>
           );
         })}
-      </div>
+      </div>)
+      }
+      
     </>
   );
 };
 
 export default Launches;
-
-export async function getStaticProps(params) {
-  const response = await fetch("https://api.spacexdata.com/v4/launches");
-  const data = await response.json();
-
-  return {
-    props: {
-      launchData: data,
-    },
-  };
-}
