@@ -114,7 +114,7 @@ const Navbar = () => {
                 </button>
               </div>
 
-              <div className="sm:flex sm:gap-3 sm:text-[1.3vmax] hidden sm:absolute sm:right-12">
+              <div className="sm:flex sm:gap-[0.35vmax] sm:text-[1.1vmax] hidden sm:absolute sm:right-[1vmax]">
                 {/* <div className="flex gap-4"> */}
                 <Link href="/capsules">Capsules</Link>
 

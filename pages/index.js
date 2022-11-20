@@ -18,7 +18,7 @@ export default function Home({ companyInfo }) {
 
       <div className={styles.main}>
         <h1 className="sm:text-6xl font-extrabold sm:text-left text-center text-4xl">All About SpaceX</h1>
-        <div className="sm:flex sm:flex-row flex flex-col justify-evenly sm:w-1/2 mt-2 gap-y-4">
+        <div className="sm:flex sm:flex-row flex flex-col justify-evenly sm:w-1/2 mt-2 gap-y-4 gap-4">
           <div className="flex-col">
             <h1 className="sm:text-xl text-2xl">About</h1>
             <p className="sm:text-sm text-lg">
