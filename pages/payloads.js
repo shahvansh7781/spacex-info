@@ -8,7 +8,7 @@ const Payload = ({ payloadData }) => {
       <div className="pr-8 pl-8">
         <Navbar />
       </div>
-      <div className="flex flex-wrap gap-8 justify-center">
+      <div className="sm:flex sm:flex-row sm:flex-wrap gap-10 justify-center items-center flex flex-col mt-10">
         {payloadData.map((payload) => {
           return <PayloadCard key={payload.id} payload={payload} />;
         })}

@@ -9,7 +9,7 @@ const Crew = ({ crewData }) => {
       <div className="pr-8 pl-8">
         <Navbar />
       </div>
-      <div className="flex gap-16 flex-wrap pr-8 pl-8 justify-center gap-y-36 mt-10">
+      <div className="sm:flex sm:flex-row sm:gap-16 sm:flex-wrap sm:pr-8 sm:pl-8 sm:justify-center gap-y-[4vmax] sm:mt-10 mt-[8vmax] flex flex-col justify-center items-center">
         {crewData.map((crew) => {
           return <CrewCard crew={crew} key={crew.id} />;
         })}

@@ -4,10 +4,10 @@ import Link from 'next/link';
 const LandpadCard = ({landpad}) => {
   return (
     <Link href={`landpadDetails/${landpad.id}`}>
-    <div className='w-96 h-96 text-center space-y-3'>
-        <Image src={landpad.images.large[0]} alt="img" height={500} width={500} className="h-96 w-96 object-cover"/>
-        <p className="font-medium text-[22px]">{landpad.name}</p>
+    <div className='sm:w-[25vmax] sm:h-[25vmax] h-[30vmax] w-[30vmax] relative'>
+        <Image src={landpad.images.large[0]} alt="img" fill/>
     </div>
+        <p className="font-medium sm:text-[1.3vmax] text-[2vmax] text-center mt-4">{landpad.name}</p>
     </Link>
   )
 }

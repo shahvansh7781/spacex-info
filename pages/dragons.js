@@ -9,9 +9,9 @@ const Dragon = ({ dragonData }) => {
       <div className="pr-8 pl-8">
         <Navbar />
       </div>
-      <div className="flex justify-center gap-6 mt-8">
+      <div className="sm:flex sm:flex-row justify-center gap-6 mt-10 flex flex-col items-center">
         <Link href={`/dragonDetails/${dragonData[0].id}`}>
-          <div className="bg-jet-black h-[39vmax] w-[35vmax] flex-col space-y-[1vmax]">
+          <div className="bg-jet-black h-[40vmax] w-[35vmax] flex-col space-y-[1vmax]">
             <Image
               src={dragonData[0].flickr_images[3]}
               alt=""
@@ -20,7 +20,7 @@ const Dragon = ({ dragonData }) => {
               className="w-[35vmax] h-[20vmax]"
             />
             <div className="p-[0.7vmax]">
-              <p className="text-sm">{dragonData[0].description}</p>
+              <p className="text-[1vmax]">{dragonData[0].description}</p>
               <button className="border-2 p-[0.8vmax] text-sm mt-[3.5vmax]">
                 More Details
               </button>
@@ -28,7 +28,7 @@ const Dragon = ({ dragonData }) => {
           </div>
         </Link>
         <Link href={`dragonDetails/${dragonData[1].id}`}>
-          <div className="bg-jet-black h-[39vmax] w-[35vmax] flex-col space-y-[0.7vmax]">
+          <div className="bg-jet-black h-[40vmax] w-[35vmax] flex-col space-y-[0.7vmax]">
             <Image
               src={dragonData[1].flickr_images[0]}
               alt=""
@@ -37,7 +37,7 @@ const Dragon = ({ dragonData }) => {
               className="w-[35vmax] h-[20vmax]"
             />
             <div className="p-[0.7vmax]">
-              <p className="text-sm">{dragonData[1].description}</p>
+              <p className="text-[1vmax]">{dragonData[1].description}</p>
               <button className="border-2 p-[0.8vmax] text-sm mt-[1vmax]">
                 More Details
               </button>

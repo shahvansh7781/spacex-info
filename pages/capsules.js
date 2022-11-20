@@ -4,16 +4,17 @@ import Navbar from "../Components/Navbar";
 
 const Capsule = ({ capsuleData }) => {
   return (
-    <div>
-      <div className="pl-8 pr-8">
+    <>
+      <div className="pr-8 pl-8">
         <Navbar />
       </div>
-      <div className="flex gap-6 justify-center flex-wrap">
+
+      <div className="sm:w-full sm:flex sm:flex-row sm:gap-8 sm:justify-center sm:flex-wrap sm:mt-[0vmax] flex flex-col flex-wrap items-center gap-6 align-middle mt-[8vmax]">
         {capsuleData.map((capsule) => {
           return <CapsuleCard key={capsule.id} capsule={capsule} />;
         })}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -12,7 +12,9 @@ export default function Home({ companyInfo }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+
       <Navbar />
+
 
       <div className={styles.main}>
         <h1 className="text-6xl font-extrabold">All About SpaceX</h1>

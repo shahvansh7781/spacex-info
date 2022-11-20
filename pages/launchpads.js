@@ -8,25 +8,24 @@ const Launchpads = ({ launchpadData }) => {
       <div className="pr-8 pl-8">
         <Navbar />
       </div>
-      <div className="flex flex-wrap justify-center gap-16 gap-y-36 text-[22px]">
+      <div className="sm:flex sm:flex-row sm:flex-wrap justify-center gap-16 sm:gap-y-[5vmax] flex flex-col items-center mt-10 gap-y-[4vmax]">
         {launchpadData.map((launchpad) => {
           return (
             <>
+            <div>
               <div
-                className="h-[500px] w-[500px] space-y-3 text-center"
+                className="sm:h-[27vmax] sm:w-[25vmax] h-[32vmax] w-[30vmax] relative"
                 key={launchpad.id}
               >
                 <Image
                   src={launchpad.images.large[0]}
                   alt=""
-                  height={500}
-                  width={500}
-                  className="h-[500px] w-[500px] object-cover"
+                  fill
                 />
-                <p className="text-[22px]">{launchpad.name}</p>
-                <p>Status: {launchpad.status}</p>
-                {/* <p>{launchpad.details}</p> */}
               </div>
+                <p className="sm:text-[1.3vmax] text-[1.6vmax] text-center mt-3">{launchpad.name}</p>
+                <p className="sm:text-[1.3vmax] text-[1.9vmax] text-center">Status: {launchpad.status}</p>
+            </div>
             </>
           );
         })}

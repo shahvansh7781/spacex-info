@@ -9,7 +9,7 @@ const Landpad = ({ landpadData }) => {
       <div className="pr-8 pl-8">
         <Navbar />
       </div>
-      <div className="flex justify-center gap-8 flex-wrap gap-y-20 mt-10">
+      <div className="sm:flex sm:flex-row justify-center gap-8 sm:flex-wrap sm:gap-y-[3vmax] mt-10 flex flex-col items-center">
         {landpadData.map((landpad) => {
           return <LandpadCard key={landpad.id} landpad={landpad} />;
         })}

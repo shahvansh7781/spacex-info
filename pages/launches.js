@@ -18,7 +18,7 @@ const Launches = () => {
         <Navbar />
       </div>
       {
-        !data ? (<h1>Loading...</h1>) : (<div className="flex justify-center gap-12 flex-wrap gap-y-72 mt-10">
+        !data ? (<h1>Loading...</h1>) : (<div className="sm:flex sm:flex-row sm:justify-center sm:gap-12 sm:flex-wrap gap-y-[5vmax] mt-10 flex flex-col justify-center items-center">
         {data.map((launch) => {
           let date = new Date(launch.date_utc);
           let month = date.getUTCMonth() + 1;
@@ -31,7 +31,7 @@ const Launches = () => {
                 href={launch.links.article ? launch.links.article : "/launches"}
                 
               >
-                <div className="w-[370px] h-[350px] text-center space-y-2 text-[20px]">
+                <div className="sm:w-[25vmax] sm:h-[22vmax] h-[25vmax] w-[31vmax] relative">
                   <Image
                     src={
                       launch.links.patch.small
@@ -40,12 +40,11 @@ const Launches = () => {
                     }
                     key={launch.id}
                     alt="no image"
-                    height={320}
-                    width={370}
+                   fill
                   />
-                  <p>{launch.name}</p>
-                  <p>{`Date: ${day}-${month}-${year}`}</p>
                 </div>
+                  <p className="text-center sm:text-[1.2vmax] mt-2 text-[1.7vmax]">{launch.name}</p>
+                  <p className="text-center sm:text-[1.2vmax] text-[1.7vmax]">{`Date: ${day}-${month}-${year}`}</p>
               </Link>
             </>
           );
