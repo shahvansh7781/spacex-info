@@ -9,21 +9,21 @@ const Rocketdetails = ({rocketDetails}) => {
     <div className="pr-8 pl-8">
     <Navbar/>
     </div>
-    <div className='flex justify-center mt-10'>
-    <div className='w-2/5'>
-    <Image src={rocketDetails.flickr_images[0]} alt="" height={500} width={500} className="h-[35vmax] w-[38vmax] object-cover" />
+    <div className='sm:flex sm:flex-row justify-center mt-16 flex flex-col items-center sm:gap-8 gap-6'>
+    <div className='sm:w-[32max] sm:h-[35vmax] h-[40vmax] w-[40vmax] relative'>
+    <Image src={rocketDetails.flickr_images[0]} alt="" fill />
     </div>
-    <div className='w-2/5 space-y-[2.5vmax]'>
-    <p className='text-2xl font-bold'> {rocketDetails.name} </p>
-    <p className='text-lg'> First Flight: {rocketDetails.first_flight} </p>
+    <div className='sm:w-[43vmax] space-y-[2.5vmax] flex flex-col sm:justify-start sm:items-start justify-center items-center gap-y-2 sm:gap-y-0'>
+    <p className='sm:text-2xl text-3xl font-bold'> {rocketDetails.name} </p>
+    <p className='sm:text-lg text-xl'> First Flight: {rocketDetails.first_flight} </p>
     <div className='flex gap-4'>
-    <div className='bg-jet-black w-[18vmax] p-[1vmax] text-base'>
+    <div className='bg-jet-black sm:w-[18vmax] p-[1.3vmax] sm:text-base text-lg sm:h-[13vmax] flex flex-col gap-y-[0.7vmax] h-[17vmax] w-[20vmax]'>
     <p> Country: {rocketDetails.country} </p>
     <p> Height: {rocketDetails.height.meters} m </p>
     <p> Diameter: {rocketDetails.diameter.meters} m </p>
     <p> Mass: {rocketDetails.mass.kg} kg </p>
     </div>
-    <div className='bg-jet-black w-[18vmax] p-[1vmax] text-base'>
+    <div className='bg-jet-black sm:w-[18vmax] p-[1.3vmax] sm:text-base text-[1.3vmax] sm:h-[13vmax] flex flex-col gap-y-[0.4vmax] h-[17vmax] w-[20vmax]'>
     <p className='text-center font-bold'>Engine Details</p>
     <p> Type: {rocketDetails.engines.type} </p>
     <p> Propellant 1: {rocketDetails.engines.propellant_1} </p>
@@ -31,10 +31,10 @@ const Rocketdetails = ({rocketDetails}) => {
     <p> Thrust/Weight Ratio: {rocketDetails.engines.thrust_to_weight} </p>
     </div>
     </div>
-    <div>
-        <Link href={rocketDetails.wikipedia} className="border-2 p-[0.8vmax] text-base bg-jet-black mr-3">Wikipedia</Link>
-        <Link href="/rockets" className="border-2 p-[0.8vmax] text-base bg-jet-black">Back</Link>
-        <p className="mt-9 text-sm">{rocketDetails.description}</p>
+    <div className='sm:text-left text-center'>
+        <Link href={rocketDetails.wikipedia} className="border-2 sm:p-[0.8vmax] p-[1vmax] sm:text-base bg-jet-black mr-3 text-lg">Wikipedia</Link>
+        <Link href="/rockets" className="border-2 sm:p-[0.8vmax] p-[1vmax] sm:text-base text-lg bg-jet-black">Back</Link>
+        <p className="sm:mt-9 mt-3 sm:text-sm text-xl sm:p-0 p-4">{rocketDetails.description}</p>
     </div>
     </div>
     </div>
