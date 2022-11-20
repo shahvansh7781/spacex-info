@@ -17,7 +17,7 @@ const Starlink = () => {
       </div>
       {
         !data ? (<h1>Loading...</h1>) : (
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center gap-8 mt-16">
         {data.map((starlink) => {
           return (
             <>

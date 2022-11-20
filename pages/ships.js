@@ -8,14 +8,16 @@ const Ships = ({shipData}) => {
    <div className='pr-8 pl-8'>
     <Navbar/>
    </div>
-   <div className='flex flex-wrap justify-center gap-10 gap-y-40 mt-10'>
+   <div className='sm:flex sm:flex-row sm:flex-wrap justify-center gap-10 gap-y-[4vmax] mt-12 flex flex-col items-center'>
 {
     shipData.map((ship)=>{
 return (
     <>
-    <div key={ship.id} className="w-[420px] h-[400px] text-center space-y-4">
-        <Image src={ship.image ? (ship.image):(shipData[0].image)} alt="No image" height={600} width={600} className="object-cover w-[420px] h-[400px]" />
-        <div className='text-[22px]'>
+    <div>
+    <div key={ship.id} className="sm:w-[24vmax] sm:h-[22vmax] relative h-[25vmax] w-[28vmax]">
+        <Image src={ship.image ? (ship.image):(shipData[0].image)} alt="No image" fill />
+    </div>
+        <div className='sm:text-[1.3vmax] text-[1.7vmax] text-center mt-2'>
         <p>Name: {ship.name} </p>
         <p>Port: {ship.home_port} </p>
         <p>Type: {ship.type} </p>

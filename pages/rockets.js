@@ -9,17 +9,17 @@ const Rocket = ({rocketData}) => {
     <div className="pr-8 pl-8">
     <Navbar/>
     </div>
-    <p className='text-center text-[50px] font-bold'>Rockets</p>
-<div className='flex justify-center gap-10 mt-16 flex-wrap gap-y-28'>
+    {/* <p className='text-center text-[50px] font-bold'>Rockets</p> */}
+<div className='sm:flex sm:flex-row justify-center gap-8 mt-12 flex-wrap gap-y-[4vmax] flex flex-col items-center'>
 {
     rocketData.map((rocket)=>{
 
         return (
             <Link key={rocket.id} href={`rocketDetails/${rocket.id}`}>
-            <div className='h-96 w-96 text-center space-y-2'>
-            <Image src={rocket.flickr_images[0]} alt="" height={500} width={500} className="h-96 w-96 object-cover"  />
-            <p className='text-[25px]'> {rocket.name} </p>
+            <div className='sm:h-[22vmax] sm:w-[22vmax] h-[27vmax] w-[27vmax] relative'>
+            <Image src={rocket.flickr_images[0]} alt="" fill  />
             </div>
+            <p className='sm:text-[1.3vmax] text-center text-[1.7vmax] mt-2'> {rocket.name} </p>
             </Link>
         )
         

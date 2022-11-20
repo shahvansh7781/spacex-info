@@ -13,7 +13,7 @@ const Roadster = ({ roadsterData }) => {
       <div className="pr-8 pl-8">
         <Navbar />
       </div>
-      <div className="flex justify-center mt-10">
+      <div className="sm:flex sm:flex-row justify-center sm:mt-10 flex flex-col items-center mt-16">
         <div className="w-1/2">
           <Image
             src={roadsterData.flickr_images[2]}
@@ -24,7 +24,7 @@ const Roadster = ({ roadsterData }) => {
           />
         </div>
         <div className="w-2/5 space-y-[2.5vmax]">
-          <p className="text-2xl font-bold">{roadsterData.name} </p>
+          <p className="text-2xl font-bold sm:mt-0 mt-5 sm:text-left text-center">{roadsterData.name} </p>
           <div className="bg-jet-black w-[18vmax] p-[1vmax] text-base space-y-[0.4vmax]">
             <p>Launch Date: {`${day}-${month}-${year}`}</p>
             <p>Launch Mass(in kg): {roadsterData.launch_mass_kg} </p>

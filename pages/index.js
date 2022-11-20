@@ -17,27 +17,27 @@ export default function Home({ companyInfo }) {
 
 
       <div className={styles.main}>
-        <h1 className="text-6xl font-extrabold">All About SpaceX</h1>
-        <div className="flex justify-evenly w-1/2 mt-2">
+        <h1 className="sm:text-6xl font-extrabold sm:text-left text-center text-4xl">All About SpaceX</h1>
+        <div className="sm:flex sm:flex-row flex flex-col justify-evenly sm:w-1/2 mt-2 gap-y-4">
           <div className="flex-col">
-            <h1 className="text-xl">About</h1>
-            <p className="text-sm">
+            <h1 className="sm:text-xl text-2xl">About</h1>
+            <p className="sm:text-sm text-lg">
               Founded by {companyInfo.founder} in {companyInfo.founded}
             </p>
-            <p className="text-sm">Has {companyInfo.employees} Employees,</p>
-            <p className="text-sm">{companyInfo.vehicles} vehicles,</p>
-            <p className="text-sm">{companyInfo.launch_sites} launch sites,</p>
-            <p className="text-sm">{companyInfo.test_sites} test sites,</p>
+            <p className="sm:text-sm text-lg">Has {companyInfo.employees} Employees,</p>
+            <p className="sm:text-sm text-lg">{companyInfo.vehicles} vehicles,</p>
+            <p className="sm:text-sm text-lg">{companyInfo.launch_sites} launch sites,</p>
+            <p className="sm:text-sm text-lg">{companyInfo.test_sites} test sites,</p>
           </div>
           <div>
-            <h1 className="text-xl">Headquarters</h1>
-            <p className="text-sm">{companyInfo.headquarters.address},</p>
-            <p className="text-sm">
+            <h1 className="sm:text-xl text-2xl">Headquarters</h1>
+            <p className="sm:text-sm text-lg">{companyInfo.headquarters.address},</p>
+            <p className="sm:text-sm text-lg">
               {companyInfo.headquarters.city},{companyInfo.headquarters.state}
             </p>
           </div>
           <div>
-            <h1 className="text-xl">Social Media</h1>
+            <h1 className="sm:text-xl text-2xl">Social Media</h1>
             <p className="text-sm">
               <Link
                 href={companyInfo.links.website}
@@ -46,7 +46,7 @@ export default function Home({ companyInfo }) {
                 Website
               </Link>
             </p>
-            <p className="text-sm">
+            <p className="sm:text-sm text-lg">
               <Link
                 href={companyInfo.links.flickr}
                 className="hover:border-b-2"
@@ -54,7 +54,7 @@ export default function Home({ companyInfo }) {
                 Flickr
               </Link>
             </p>
-            <p className="text-sm">
+            <p className="sm:text-sm text-lg">
               <Link
                 href={companyInfo.links.twitter}
                 className="hover:border-b-2"
@@ -62,7 +62,7 @@ export default function Home({ companyInfo }) {
                 Twitter
               </Link>
             </p>
-            <p className="text-sm">
+            <p className="sm:text-sm text-lg">
               <Link
                 href={companyInfo.links.elon_twitter}
                 className="hover:border-b-2"
@@ -72,8 +72,8 @@ export default function Home({ companyInfo }) {
             </p>
           </div>
         </div>
-        <h1 className="text-xl mt-5">Mission</h1>
-        <p className="text-center text-base">
+        <h1 className="sm:text-xl mt-7 text-3xl">Mission</h1>
+        <p className="text-center sm:text-base text-lg">
           “You want to wake up in the morning and think the future is going to
           be great - and that’s what being a spacefaring civilization is all
           about. <br /> It’s about believing in the future and thinking that the
