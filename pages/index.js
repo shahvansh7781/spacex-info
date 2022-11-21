@@ -65,7 +65,7 @@ export default function Home({ companyInfo }) {
               </div>
               <div>
                 <h1 className="sm:text-xl text-2xl">Social Media</h1>
-                <p className="text-sm">
+                <p className="sm:text-sm text-lg">
                   <Link
                     href={companyInfo.links.website}
                     className="hover:border-b-2"
