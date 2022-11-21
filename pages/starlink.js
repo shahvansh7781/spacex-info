@@ -1,8 +1,8 @@
-import React from "react";
+// import React from "react";
 import Navbar from "../Components/Navbar";
 import StarlinkCard from "../Components/StarlinkCard";
 import useSWR from "swr";
-
+import { RingLoader } from "react-spinners";
 const fetcher = async () => {
   const response = await fetch("https://api.spacexdata.com/v4/starlink");
   const data = await response.json();
@@ -16,7 +16,9 @@ const Starlink = () => {
         <Navbar />
       </div>
       {
-        !data ? (<h1>Loading...</h1>) : (
+        !data ? (<div className="flex w-full h-[80vh] justify-center items-center">
+        <RingLoader color="#FFFFFF" size="4vmax" />
+      </div>) : (
             <div className="flex flex-wrap justify-center gap-8 mt-16">
         {data.map((starlink) => {
           return (
